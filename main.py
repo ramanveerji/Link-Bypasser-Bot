@@ -110,7 +110,7 @@ def loopthread(message,otherss=False):
 # start command
 @app.on_message(filters.command(["start"]))
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
-    app.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, I am Link Bypasser Bot, just send me any supported links and i will you get you results.\nCheckout /help to Read More__",
+    app.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, I am Link Bypasser Bot, just send me any supported links and I will give you the bypassed direct link.\nCheckout /help to Read More__",
     reply_markup=InlineKeyboardMarkup([
         [ InlineKeyboardButton("🌐 Our Channel", url="https://telegram.me/rs_bro")],
         [ InlineKeyboardButton("Contact Admin", url="https://telegram.me/rs_m_bot") ]]), 

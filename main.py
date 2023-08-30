@@ -44,14 +44,14 @@ def loopthread(message,otherss=False):
     if len(urls) == 0: return
 
     if bypasser.ispresent(bypasser.ddl.ddllist,urls[0]):
-        msg = app.send_message(message.chat.id, "⚡ __generating...__", reply_to_message_id=message.id)
+        msg = app.send_message(message.chat.id, "⚡ __Generating...__", reply_to_message_id=message.id)
     elif freewall.pass_paywall(urls[0], check=True):
-        msg = app.send_message(message.chat.id, "🕴️ __jumping the wall...__", reply_to_message_id=message.id)
+        msg = app.send_message(message.chat.id, "🕴️ __Jumping the wall...__", reply_to_message_id=message.id)
     else:
         if "https://olamovies" in urls[0] or "https://psa.wf/" in urls[0]:
-            msg = app.send_message(message.chat.id, "⏳ __this might take some time...__", reply_to_message_id=message.id)
+            msg = app.send_message(message.chat.id, "⏳ __This might take some time...__", reply_to_message_id=message.id)
         else:
-            msg = app.send_message(message.chat.id, "🔎 __bypassing...__", reply_to_message_id=message.id)
+            msg = app.send_message(message.chat.id, "🔎 __Bypassing...__", reply_to_message_id=message.id)
 
     strt = time()
     links = ""
@@ -132,7 +132,7 @@ def receive(client: pyrogram.client.Client, message: pyrogram.types.messages_and
 
 # doc thread
 def docthread(message):
-    msg = app.send_message(message.chat.id, "🔎 __bypassing...__", reply_to_message_id=message.id)
+    msg = app.send_message(message.chat.id, "🔎 __Bypassing...__", reply_to_message_id=message.id)
     print("sent DLC file")
     file = app.download_media(message)
     dlccont = open(file,"r").read()

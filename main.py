@@ -112,8 +112,8 @@ def loopthread(message,otherss=False):
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
     app.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, I am Link Bypasser Bot, just send me any supported links and I will give you the bypassed direct link.\nCheckout /help to know more the websites that are supported by me.__",
     reply_markup=InlineKeyboardMarkup([
-        [ InlineKeyboardButton("🌐 Our Channel", url="https://telegram.me/rs_bro")],
-        [ InlineKeyboardButton("Contact Admin", url="https://telegram.me/rs_m_bot") ]]), 
+        [ InlineKeyboardButton("Our Channel 📣", url="https://telegram.me/rs_bro")],
+        [ InlineKeyboardButton("Contact Admin 🤵🏻", url="https://telegram.me/rs_m_bot") ]]), 
         reply_to_message_id=message.id)
 
 

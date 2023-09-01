@@ -525,21 +525,21 @@ def krakenfiles(page_link: str) -> str:
         res = session.get(url)
         html = etree.HTML(res.text)
         if post_url:= html.xpath('//form[@id="dl-form"]/@action'):
-        	post_url = f'https:{post_url[0]}'
-    	else:
-        	session.close()
-        	return ('ERROR: Unable to find post link.')
-    	if token:= html.xpath('//input[@id="dl-token"]/@value'):
-        	data = {'token': token[0]}
-    	else:
-        	session.close()
-        	return ('ERROR: Unable to find token for post.')
-	except Exception as e:
+            post_url = f'https:{post_url[0]}'
+        else:
+            session.close()
+            return ('ERROR: Unable to find post link.')
+        if token:= html.xpath('//input[@id="dl-token"]/@value'):
+            data = {'token': token[0]}
+        else:
+            session.close()
+            return ('ERROR: Unable to find token for post.')
+    except Exception as e:
         session.close()
         return (f'ERROR: {e.__class__.__name__} Something went wrong')
     try:
         dl_link = session.post(post_url, data=data).json()
-		return dl_link['url']
+        return dl_link['url']
     except Exception as e:
         session.close()
         return (f'ERROR: {e.__class__.__name__} While send post request')
